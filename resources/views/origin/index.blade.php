@@ -1,0 +1,56 @@
+@extends('layouts.admin')
+
+@section('title','New Origin')
+
+@section('content')
+    <div class="page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Origin</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">New Origin</a></li>
+        </ol>
+    </div>
+
+    <div class="row">
+        {{-- Origin Form Start --}}
+        <div class="col-xl-4 col-lg-4 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Origin Form</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        {{ Form::open(['route'=>'origin.store','method'=>"post"]) }}
+                            @include('origin.form-origin',["button"=>"Save Origin"])
+                        {{ Form::close() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Origin Form End --}}
+
+        {{-- Origin Lists Start --}}
+        <div class="col-xl-8 col-lg-8 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Origins</h4>
+                </div>
+                <div class="card-body">
+                    @include('origin.origins')
+                </div>
+            </div>
+        </div>
+        {{-- Origin Lists End --}}
+
+    </div>
+
+@endsection
+
+
+@section('js')
+    <script>
+        $(document).on("click",".changeStatus",function () {
+           return confirm("Are you sure to change status?");
+        });
+    </script>
+
+@endsection
