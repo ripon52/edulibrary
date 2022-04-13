@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 
+//  https://github.com/ripon52/edulibrary
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
